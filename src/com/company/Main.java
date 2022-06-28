@@ -11,12 +11,14 @@ public class Main {
         try  {
             int a = Integer.parseInt(reader.readLine());
             int b = Integer.parseInt(reader.readLine());
-            System.out.println(String.format("is %1$d equal to %2$d? - %3$s\n" +
-                            "is %1$d less than %2$d? - %4$s\n" +
-                            "is %1$d less or equal to %2$d? - %5$s\n" +
-                            "is %1$d greater than %2$d? - %6$s\n" +
-                            "is %1$d greater or equal to %2$d? - %7$s\n",
-                    a,b,a==b, a<b,a<=b,a>b,a>=b));
+            System.out.printf("""
+                            is %1$d equal to %2$d? - %3$s
+                            is %1$d less than %2$d? - %4$s
+                            is %1$d less or equal to %2$d? - %5$s
+                            is %1$d greater than %2$d? - %6$s
+                            is %1$d greater or equal to %2$d? - %7$s
+                            %n""",
+                    a,b,a==b, a<b,a<=b,a>b,a>=b);
         } catch (NumberFormatException e) {
             System.out.println("input data not a number");
         } catch (IOException e) {e.printStackTrace();}
@@ -30,7 +32,7 @@ public class Main {
             String b2 = reader.readLine();
             if ((b1.equalsIgnoreCase("true") || b1.equalsIgnoreCase("false") &&
                     (b2.equalsIgnoreCase("true") || b2.equalsIgnoreCase("false")))) {
-                    System.out.println(String.format("Is %s and %s equal? - %s", b1,b2, b1.equalsIgnoreCase(b2)?true:false));
+                    System.out.printf("Is %s and %s equal? - %s%n", b1,b2, b1.equalsIgnoreCase(b2));
             } else System.out.println("input data not a boolean");
         } catch (IOException e) { e.printStackTrace();
             }
@@ -39,7 +41,7 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             int a = Integer.parseInt(reader.readLine());
-            System.out.println(String.format("Number is even? - %s", a%2==0));
+            System.out.printf("Number is even? - %s%n", a%2==0);
         }
         catch (NumberFormatException E) { System.out.println("input data not a number");}
         catch (IOException e) {e.printStackTrace();}
@@ -49,7 +51,7 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             int a = Integer.parseInt(reader.readLine());
-            System.out.println(String.format("Number is odd? - %s", a%2!=0));
+            System.out.printf("Number is odd? - %s%n", a%2!=0);
         }
         catch (NumberFormatException E) { System.out.println("input data not a number");}
         catch (IOException e) {e.printStackTrace();}
